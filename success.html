@@ -56,3 +56,35 @@ document.getElementById("msg").innerText=m[t][0];
 <a href="https://nowpayments.io/payment/?iid=4526887895&source=button" target="_blank" rel="noreferrer noopener">
    <img src="https://nowpayments.io/images/embeds/payment-button-white.svg" alt="Cryptocurrency & Bitcoin payment button by NOWPayments">
 </a></a>3CF40FZ-74SM6VZ-MD8TE88-5AJEQCT 
+// في ملف الواجهة الأمامية (مثل CartPage.js)
+
+async function handlePayment() {
+  const amount = 10.50; // المبلغ المطلوب
+  const currency = 'usd'; // العملة
+
+  try {
+    // استدعاء نقطة الاتصال الآمنة التي أنشأتها في الخلفية
+    const response = await fetch('/api/create-payment', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ amount, currency }),
+    });
+
+    const data = await response.json();
+
+    if (response.ok) {
+      // إعادة توجيه العميل إلى صفحة الدفع الخاصة بـ NOWPayments
+      window.location.href = data.payment_url; 
+    } else {
+      alert('Failed to create payment: ' + data.message);
+    }
+  } catch (error) {
+    console.error('Error initiating payment:', error);
+    alert('An error occurred during payment initiation.');
+  }
+}
+
+// ربط هذه الدالة بزر في HTML:
+// <button onclick="handlePayment()">Pay with Crypto</button>

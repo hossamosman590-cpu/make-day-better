@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head><meta charset="UTF-8"><title>تم الدفع</title></head>
+<body style="background:#111;color:#0f0;text-align:center;font-family:Arial;padding:40px">
+<h1>رسالتك</h1>
+<div id="msg"></div>
+<script>
+let n=localStorage.getItem("name")||"صديقي";
+let t=localStorage.getItem("type");
+let m={
+"تحفيز":[`${n} أنت قادر على أكثر مما تتخيل.`],
+"حكمة":[`الحكمة تبدأ بالخطوة الأولى يا ${n}.`],
+"مرح":[`${n} ابتسم، أنت نجم اليوم 😄`]
+};
+document.getElementById("msg").innerText=m[t][0];
+</script>
+</body>
+</html>

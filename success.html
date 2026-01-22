@@ -18,6 +18,37 @@ document.getElementById("msg").innerText=m[t][0];
 </script>
 </body>
 </html>
-<iframe src="https://nowpayments.io/embeds/payment-widget?iid=5407895474" width="410" height="696" frameborder="0" scrolling="no" style="overflow-y: hidden;">
-   Can't load widget
-</iframe
+<<!-- زر الدفع بـ USDT TRC20 -->
+<form id="payment-form" action="https://www.nowpayments.io/pay" method="GET" target="_blank">
+  <!-- العملة والشبكة -->
+  <input type="hidden" name="currency" value="USDT.TRON">
+  
+  <!-- المبلغ بالدولار -->
+  <input type="hidden" name="amount" value="1">
+  
+  <!-- عنوان محفظتك TRC20 -->
+  <input type="hidden" name="address" value="TK9yUdxUVpqAG4PaTXxe5n2UeAiaRPc9Pt">
+  
+  <!-- زر الدفع -->
+  <button type="submit" style="
+    padding: 12px 25px; 
+    background-color: #ff00aa; 
+    color: white; 
+    font-weight: bold; 
+    border: none; 
+    border-radius: 8px; 
+    cursor: pointer;
+  ">
+    ادفع 1 USDT واستلم رسالتك
+  </button>
+</form>
+
+<script>
+  // تخزين الاسم والاهتمام قبل الانتقال لصفحة الدفع
+  document.getElementById('payment-form').addEventListener('submit', () => {
+    const name = document.getElementById('name')?.value || "صديقي";
+    const interest = document.getElementById('interest')?.value || "تحفيز";
+    localStorage.setItem('name', name);
+    localStorage.setItem('interest', interest);
+  });
+</script>

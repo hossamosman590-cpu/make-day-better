@@ -1,8 +1,22 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head><meta charset="UTF-8"><title>تم الدفع</title></head>
-<a href="https://nowpayments.io/payment/?iid=4526887895&source=button" target="_blank" rel="noreferrer noopener">
-   <img src="https://nowpayments.io/images/embeds/payment-button-white.svg" alt="Cryptocurrency & Bitcoin payment button by NOWPayments"></a   
+<!-- زر دفع NOWPayments -->
+<form action="https://www.nowpayments.io/pay" method="GET" target="_blank">
+  <!-- العملة -->
+  <input type="hidden" name="currency" value="USDT.TRON">
+  
+  <!-- المبلغ بالدولار -->
+  <input type="hidden" name="amount" value="1">
+  
+  <!-- عنوان محفظتك -->
+  <input type="hidden" name="address" value="TK9yUdxUVpqAG4PaTXxe5n2UeAiaRPc9Pt">
+  
+  <!-- نص الزر -->
+  <button type="submit" style="padding:10px 20px; background:#ff00aa; color:white; border:none; border-radius:8px; cursor:pointer;">
+    ادفع 1 USDT واستلم رسالتك
+  </button>
+</form>   
 <body style="background:#111;color:#0f0;text-align:center;font-family:Arial;padding:40px">
 <h1>رسالتك</h1>
 <div id="msg"></div>

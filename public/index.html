@@ -1,39 +1,34 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-<meta charset="UTF-8">
-<title>رسالتك الذكية مقابل 1 USDT</title>
-</head>
-<body style="background:#111;color:#fff;text-align:center;font-family:Arial;padding:40px">
-<h1>رسالتك الذكية مقابل 1 USDT</h1>
-<input id="name" placeholder="اسمك"><br><br>
-<select id="type">
-<option>تحفيز</option><option>حكمة</option><option>مرح</option>
-</select><br><br>
-<a href="https://www.nowpayments.io/pay?currency=USDT.TRON&amount=1&address=TK9yUdxUVpqAG4PaTXxe5n2UeAiaRPc9Pt"
-onclick="save()"
-target="_blank"
-style="padding:15px 25px;background:#00c;color:#fff;text-decoration:none;border-radius:8px">
-ادفع 1 USDT
-</a>
-
-<script>
-function save(){
-localStorage.setItem("name",document.getElementById("name").value);
-localStorage.setItem("type",document.getElementById("type").value);
-}
-</script>
-</body>
-</html>
-<!DOCTYPE html>
-<html>
-<head>
   <meta charset="UTF-8">
-  <title>Test</title>
+  <title>موقعي</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+    }
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      background: #16a34a;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #15803d;
+    }
+  </style>
 </head>
 <body>
- <a href="pay.html">
-  <button style="padding:15px 30px;font-size:18px;">
-    ادفع الآن
-  </button>
-</a>
+  <h1>مرحبا بك في موقعي</h1>
+  <p>اضغط الزر أدناه للدفع</p>
+
+  <a href="pay.html">
+    <button>ادفع الآن</button>
+  </a>
+</body>
+</html>

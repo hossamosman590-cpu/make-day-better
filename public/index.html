@@ -1,42 +1,18 @@
 <!DOCTYPE html>
-<html lang="ar">
-<head>
-  <meta charset="UTF-8">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      margin-top: 100px;
-    }
-    button {
-      padding: 15px 30px;
-      font-size: 18px;
-      background: #16a34a;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-    button:hover {
-      background: #15803d;
-    }
-  </style>
-</head>
-<body>
-  <p>clik to pay</p><!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Motivational Messages</title>
+<title>Service Payment & Motivational Messages</title>
 <style>
   body {
     font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #fef9c3, #bbf7d0);
     text-align: center;
     padding: 50px;
-    background: linear-gradient(to bottom, #fef9c3, #bbf7d0);
   }
   h1 {
     color: #065f46;
+    font-size: 36px;
     margin-bottom: 20px;
   }
   p {
@@ -57,47 +33,79 @@
   button:hover {
     background: #15803d;
   }
+  #messageBox {
+    margin-top: 40px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #065f46;
+  }
 </style>
 </head>
 <body>
 
-<h1>Welcome! 🌟</h1>
-<p id="message">Stay positive and keep moving forward!</p>
+<h1>Get Your Service Now! 💎</h1>
+<p>Click the button below to pay and unlock your motivational messages!</p>
 
-<button onclick="nextMessage()">Next Message</button>
-<button onclick="showFunMessage()">Show Fun Message</button>
+<!-- زر الدفع -->
+<a href="PASTE_YOUR_PAYMENT_LINK_HERE" target="_blank">
+  <button>Pay Now</button>
+</a>
+
+<!-- زر بعد الدفع للتحويل للرسالة -->
+<p>After you paid, click below to see your motivational message:</p>
+<button id="showMessageBtn">I Paid</button>
+
+<!-- صندوق الرسائل -->
+<div id="messageBox"></div>
 
 <script>
-  // Array of motivational messages
+  // Massive array of motivational messages
   const motivationalMessages = [
     "Stay positive and keep moving forward!",
     "You are capable of amazing things!",
     "Believe in yourself and all that you are.",
     "Every day is a second chance.",
     "Success is the sum of small efforts repeated daily.",
-    "Your potential is endless!"
+    "Your potential is endless!",
+    "Dream big, work hard, stay focused!",
+    "Mistakes are proof that you are trying.",
+    "You got this! Keep going!",
+    "Don’t wait for opportunity. Create it!",
+    "Your only limit is your mind.",
+    "Small steps every day lead to big results.",
+    "Turn your can'ts into cans and your dreams into plans.",
+    "Push yourself, because no one else is going to do it for you.",
+    "Hustle in silence and let your success make the noise.",
+    "Great things never come from comfort zones.",
+    "Stay humble, work hard, be kind."
   ];
 
-  // Array of fun messages
+  // Array of fun messages (optional)
   const funMessages = [
     "Keep calm and eat a cookie! 🍪",
     "Smile! Life is too short to frown. 😄",
-    "Don't forget to dance like nobody's watching! 💃",
+    "Dance like nobody’s watching! 💃",
     "You are the Beyoncé of your own life! 🎤",
-    "Laugh every day, it burns calories! 😂"
+    "Laugh every day, it burns calories! 😂",
+    "Coffee first, then conquer the world! ☕",
+    "Life is short, smile while you still have teeth! 😁",
+    "Don’t worry, be happy! 🎵"
   ];
 
-  let motivationalIndex = 0;
+  const messageBox = document.getElementById('messageBox');
+  const showMessageBtn = document.getElementById('showMessageBtn');
 
-  function nextMessage() {
-    motivationalIndex = (motivationalIndex + 1) % motivationalMessages.length;
-    document.getElementById("message").textContent = motivationalMessages[motivationalIndex];
+  // Combine all messages
+  const allMessages = motivationalMessages.concat(funMessages);
+
+  // Show random message
+  function showRandomMessage() {
+    const randomIndex = Math.floor(Math.random() * allMessages.length);
+    messageBox.textContent = allMessages[randomIndex];
   }
 
-  function showFunMessage() {
-    const randomIndex = Math.floor(Math.random() * funMessages.length);
-    document.getElementById("message").textContent = funMessages[randomIndex];
-  }
+  showMessageBtn.addEventListener('click', showRandomMessage);
+
 </script>
 
 </body>

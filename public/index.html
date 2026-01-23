@@ -2,7 +2,6 @@
 <html lang="ar">
 <head>
   <meta charset="UTF-8">
-  <title>موقعي</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -24,11 +23,82 @@
   </style>
 </head>
 <body>
-  <h1>مرحبا بك في موقعي</h1>
-  <p>اضغط الزر أدناه للدفع</p>
+  <p>clik to pay</p><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Motivational Messages</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 50px;
+    background: linear-gradient(to bottom, #fef9c3, #bbf7d0);
+  }
+  h1 {
+    color: #065f46;
+    margin-bottom: 20px;
+  }
+  p {
+    font-size: 22px;
+    color: #065f46;
+    margin-bottom: 40px;
+  }
+  button {
+    padding: 15px 40px;
+    font-size: 18px;
+    background: #16a34a;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 5px;
+  }
+  button:hover {
+    background: #15803d;
+  }
+</style>
+</head>
+<body>
 
-  <a href="pay.html">
-    <button>ادفع الآن</button>
-  </a>
+<h1>Welcome! 🌟</h1>
+<p id="message">Stay positive and keep moving forward!</p>
+
+<button onclick="nextMessage()">Next Message</button>
+<button onclick="showFunMessage()">Show Fun Message</button>
+
+<script>
+  // Array of motivational messages
+  const motivationalMessages = [
+    "Stay positive and keep moving forward!",
+    "You are capable of amazing things!",
+    "Believe in yourself and all that you are.",
+    "Every day is a second chance.",
+    "Success is the sum of small efforts repeated daily.",
+    "Your potential is endless!"
+  ];
+
+  // Array of fun messages
+  const funMessages = [
+    "Keep calm and eat a cookie! 🍪",
+    "Smile! Life is too short to frown. 😄",
+    "Don't forget to dance like nobody's watching! 💃",
+    "You are the Beyoncé of your own life! 🎤",
+    "Laugh every day, it burns calories! 😂"
+  ];
+
+  let motivationalIndex = 0;
+
+  function nextMessage() {
+    motivationalIndex = (motivationalIndex + 1) % motivationalMessages.length;
+    document.getElementById("message").textContent = motivationalMessages[motivationalIndex];
+  }
+
+  function showFunMessage() {
+    const randomIndex = Math.floor(Math.random() * funMessages.length);
+    document.getElementById("message").textContent = funMessages[randomIndex];
+  }
+</script>
+
 </body>
 </html>
